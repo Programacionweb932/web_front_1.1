@@ -1,0 +1,163 @@
+.Reparar-pc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    color: #ffffff;
+    background: rgba(111, 157, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(111, 157, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.Reparar-pc::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/public//image/reparacionpc.jpeg');
+    opacity: 0.25;
+    z-index: 0;
+}
+
+.Reparar-pc h1 {
+    color: #000000 !important;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(127, 219, 255, 0.3);
+    position: relative;
+    z-index: 1;
+    animation: titlePulse 2s ease-in-out infinite alternate;
+}
+
+.Reparar-pc p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #000000;
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1s ease-out;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.image-container img {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    animation: float 6s ease-in-out infinite;
+}
+
+.image-container img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.button-container-reparacion {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.button-container-reparacion button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.button-container-reparacion button.primary {
+    background: linear-gradient(45deg, #007bff, #00bfff);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.button-container-reparacion button.secondary {
+    background: rgba(111, 157, 255, 0.1);
+    color: #7fdbff;
+    border: 2px solid rgba(127, 219, 255, 0.3);
+}
+
+.button-container-reparacion button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+}
+
+.button-container-reparacion button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.button-container-reparacion button:hover::before {
+    left: 100%;
+}
+
+@keyframes titlePulse {
+    from {
+        text-shadow: 0 0 10px rgba(127, 219, 255, 0.3);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(127, 219, 255, 0.5),
+                     0 0 30px rgba(127, 219, 255, 0.3);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}

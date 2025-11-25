@@ -1,0 +1,395 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1c2c 0%, #2a3c77 100%);
+    color: #ffffff;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/public/admin/WhatsApp\ Image\ 2025-05-22\ at\ 10.22.52\ AM.jpeg');
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.welcome-message {
+    margin-bottom: 2rem;
+    color: #7fdbff;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(127, 219, 255, 0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+    position: relative;
+    z-index: 2;
+    padding: 0 1rem;
+    line-height: 1.3;
+}
+
+.welcome-message h3 {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    margin-top: 0.5rem;
+    color: #ffffff;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1400px;
+    padding: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.service-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 0.6s ease-out forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 320px;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.service-button {
+    margin: 15px 0;
+    padding: clamp(10px, 3vw, 12px) clamp(16px, 4vw, 24px);
+    background: linear-gradient(45deg, #6f9dff, #4f73ff);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    font-weight: 600;
+    width: 100%;
+    max-width: 250px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-height: 44px; /* Tamaño mínimo para touch */
+}
+
+.service-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.service-button:hover::before {
+    left: 100%;
+}
+
+.service-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(111, 157, 255, 0.5);
+}
+
+.service-image {
+    width: clamp(120px, 25vw, 200px);
+    height: clamp(120px, 25vw, 200px);
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.service-image:hover {
+    transform: scale(1.05);
+}
+
+.logout-button {
+    padding: clamp(10px, 3vw, 12px) clamp(16px, 4vw, 24px);
+    background: linear-gradient(45deg, #ff4b4b, #dc3545);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    
+    /* Posición fija que no se mueve */
+    position: fixed;
+    bottom: clamp(1rem, 4vw, 2rem);
+    right: clamp(1rem, 4vw, 2rem);
+    z-index: 1000; /* Mayor z-index para estar siempre arriba */
+    
+    /* Tamaños mínimos para touch */
+    min-height: 44px;
+    min-width: 140px;
+    
+    /* Efectos de sombra base */
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+    
+    /* Asegurar que no afecte el layout */
+    margin: 0;
+}
+
+.logout-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(220, 53, 69, 0.5);
+    background: linear-gradient(45deg, #ff6b6b, #e74c3c);
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(127, 219, 255, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(127, 219, 255, 0.8),
+                     0 0 30px rgba(127, 219, 255, 0.6),
+                     0 0 40px rgba(127, 219, 255, 0.4);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Agregando delay a cada servicio para una entrada escalonada */
+.service-item:nth-child(1) { animation-delay: 0.1s; }
+.service-item:nth-child(2) { animation-delay: 0.2s; }
+.service-item:nth-child(3) { animation-delay: 0.3s; }
+.service-item:nth-child(4) { animation-delay: 0.4s; }
+.service-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* 📱 RESPONSIVE DESIGN - Móviles pequeños (hasta 480px) */
+@media (max-width: 480px) {
+    .home-container {
+        padding: 0.5rem;
+        min-height: 100vh;
+        justify-content: flex-start;
+        padding-top: 2rem;
+    }
+
+    .welcome-message {
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0.5rem;
+        max-width: 100%;
+    }
+
+    .service-item {
+        padding: 1rem 0.5rem;
+        min-height: 280px;
+        margin: 0 auto;
+        max-width: 300px;
+    }
+
+    .service-button {
+        font-size: 0.85rem;
+        padding: 10px 16px;
+        max-width: 200px;
+    }
+
+    .service-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .logout-button {
+        position:absolute;
+        bottom: -1rem;
+        right: 50%;
+        transform: translateX(50%);
+        min-width: 160px;
+        font-size: 0.9rem;
+        padding: 10px 20px;
+        box-shadow: 0 3px 12px rgba(220, 53, 69, 0.4);
+
+        min-height: 44px;
+        min-width: 140px;
+    }
+    
+    .logout-button:hover {
+        transform: translateX(50%) scale(1.05);
+    }
+}
+
+
+/* 📱 RESPONSIVE DESIGN - Tabletas pequeñas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .home-container {
+        padding: 1.5rem;
+    }
+
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .service-item {
+        min-height: 300px;
+        padding: 1.25rem;
+    }
+
+    .service-image {
+        width: 140px;
+        height: 140px;
+    }
+
+    .service-button {
+        font-size: 0.95rem;
+        max-width: 220px;
+    }
+
+    .logout-button {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        min-width: 150px;
+    }
+}
+
+/* 💻 RESPONSIVE DESIGN - Tabletas grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .services-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .service-item {
+        min-height: 320px;
+    }
+
+    .service-image {
+        width: 160px;
+        height: 160px;
+    }
+    
+}
+
+/* 🖥️ RESPONSIVE DESIGN - Escritorios (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .services-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* 🖥️ RESPONSIVE DESIGN - Escritorios grandes (más de 1440px) */
+@media (min-width: 1441px) {
+    .services-container {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2.5rem;
+        max-width: 1600px;
+    }
+
+    .service-item {
+        min-height: 350px;
+        padding: 2rem;
+    }
+
+    .service-image {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* 🎯 Mejoras de accesibilidad y usabilidad */
+@media (hover: none) {
+    .service-item:hover {
+        transform: none;
+    }
+    
+    .service-button:hover {
+        transform: none;
+    }
+    
+    .service-image:hover {
+        transform: none;
+    }
+}
+
+/* 📱 Orientación landscape en móviles */
+@media (max-width: 768px) and (orientation: landscape) {
+    .home-container {
+        min-height: auto;
+        padding: 1rem;
+    }
+    
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .service-item {
+        min-height: 250px;
+        padding: 1rem;
+    }
+    
+    .service-image {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+    /* 🔍 Mejora para textos largos en botones */
+    .service-button {
+        word-wrap: break-word;
+        white-space: normal;
+        line-height: 1.3;
+}

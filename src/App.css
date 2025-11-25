@@ -1,0 +1,60 @@
+/* Estilo general del contenedor de la aplicación */
+.App {
+  text-align: center;
+  justify-content: center;
+  color: aqua;
+  padding-top: 70px; /* 👉 espacio para que el header fijo no tape el contenido */
+}
+
+.header-left {
+  flex: 1; /* ocupa todo el espacio disponible a la izquierda */
+}
+
+/* Estilo del header */
+header {
+  width: 100%;
+  padding: 12px 20px;
+  background: #6f9dff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  display:flex;
+  justify-content: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+/* Grupo de botones alineado a la derecha */
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: -15px;
+}
+
+/* Botones */
+.button-group button {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+  background-color: #6f9dff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-group button:hover {
+  background-color: #6f9dff33;
+}
+
+/* Título */
+h1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}

@@ -1,0 +1,182 @@
+.mantenimiento-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(111, 157, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  align-items: center;
+  padding: 2rem;
+  border: 1px solid rgba(111, 157, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mantenimiento-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/public//image/mantenimiento.jpg');
+  opacity: 0.20;
+  z-index: 0;
+}
+
+.mantenimiento-container h1 {
+  color: #000000 !important;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px rgba(127, 219, 255, 0.3);
+  position: relative;
+  z-index: 1;
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+.mantenimiento-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #000000;
+  text-align: center;
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1s ease-out;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.image-container img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: floatAnimation 6s ease-in-out infinite;
+}
+
+.image-container img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 600px;
+}
+
+.solicitar-servicio-btn,
+.volver-servicio-btn {
+  min-width: 200px;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.solicitar-servicio-btn {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.volver-servicio-btn {
+  background: rgba(31, 82, 192, 0.1) !important;
+  color: #000000 !important;
+  border: 2px solid rgba(76, 85, 88, 0.3) !important;
+  box-shadow: 0 4px 15px rgba(111, 157, 255, 0.1);
+}
+
+.solicitar-servicio-btn:hover,
+.volver-servicio-btn:hover {
+  transform: translateY(-3px);
+}
+
+.solicitar-servicio-btn:hover {
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+  background: linear-gradient(45deg, #45a049, #4CAF50);
+}
+
+.volver-servicio-btn:hover {
+  box-shadow: 0 8px 25px rgba(111, 157, 255, 0.2);
+  background: rgba(111, 157, 255, 0.2);
+  border-color: #7fdbff;
+}
+
+.solicitar-servicio-btn::before,
+.volver-servicio-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.solicitar-servicio-btn:hover::before,
+.volver-servicio-btn:hover::before {
+  left: 100%;
+}
+
+@keyframes titleGlow {
+  from {
+    text-shadow: 0 0 10px rgba(127, 219, 255, 0.3);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(127, 219, 255, 0.5),
+                 0 0 30px rgba(127, 219, 255, 0.3);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

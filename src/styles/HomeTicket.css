@@ -1,0 +1,153 @@
+/* App.css */
+.home-ticket-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }  
+
+/* HomeTicket.css */
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.home-ticket-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+}
+
+h1.home-ticket-title {
+  font-size: 3rem !important;
+  color: #4a90e2 !important;
+  margin-bottom: 4rem !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.home-ticket-buttons {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 2rem !important;
+  margin-top: 2rem !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  max-width: 800px !important;
+}
+
+/* Estilo para los enlaces que actúan como botones */
+.home-ticket-buttons a,
+.home-ticket-buttons button {
+  min-width: 200px !important;
+  padding: 1rem 2rem !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: white !important;
+  background: linear-gradient(45deg, #4a90e2, #357abd) !important;
+  border: none !important;
+  border-radius: 50px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3) !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  text-align: center !important;
+}
+
+.home-ticket-buttons a:hover,
+.home-ticket-buttons button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4) !important;
+  background: linear-gradient(45deg, #357abd, #4a90e2) !important;
+}
+
+.home-ticket-buttons a:active,
+.home-ticket-buttons button:active {
+  transform: translateY(1px) !important;
+  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3) !important;
+}
+
+/* Estilos específicos para cada botón/enlace */
+.home-ticket-buttons a:nth-child(1),
+.home-ticket-buttons button:nth-child(1) {
+  background: linear-gradient(45deg, #4a90e2, #357abd) !important;
+}
+
+.home-ticket-buttons a:nth-child(2),
+.home-ticket-buttons button:nth-child(2) {
+  background: linear-gradient(45deg, #5a9ee2, #458abd) !important;
+}
+
+.home-ticket-buttons a:nth-child(3),
+.home-ticket-buttons button:nth-child(3) {
+  background: linear-gradient(45deg, #6aace2, #559abd) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-ticket-container {
+    padding: 1rem !important;
+    min-height: 70vh !important;
+  }
+
+  h1.home-ticket-title {
+    font-size: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .home-ticket-buttons {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    padding: 0 1rem !important;
+  }
+
+  .home-ticket-buttons a,
+  .home-ticket-buttons button {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-ticket-container {
+  animation: fadeIn 0.5s ease-out;
+}  

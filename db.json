@@ -1,0 +1,17 @@
+{
+    "usuarios":[
+        {
+            "id": 1,
+            "apellido": "Rivas", 
+            "nombre": "Kevin",
+            "username": "827ccb0eea8a706c4c34a16891f84e7b"
+        },
+        {
+            "id": 2,
+            "apellido": "Bolaños", 
+            "nombre": "Alexis",
+            "username": "01cfcd4f6b8770febfb40cb906715822 "
+
+        }
+    ]
+}

@@ -29,7 +29,7 @@ const TicketComponent = ({ setView }) => {
     if (!validateForm()) return;  // Si hay errores, no envíes el ticket
 
     try {
-      const response = await fetch('https://web-back-p.vercel.app/api/ticket', {
+      const response = await fetch('https://web-back-1-1.onrender.com/api/ticket', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ description, subject, email, name }),
@@ -51,7 +51,7 @@ const TicketComponent = ({ setView }) => {
 
   const fetchTicketsHistory = async () => {
     try {
-      const response = await fetch('https://web-back-p.vercel.app/api/tickets', {
+      const response = await fetch('https://web-back-1-1.onrender.com/api/tickets', {
         method: 'GET',
         headers: { 'Authorization': `Bearer ${token}` },
       });

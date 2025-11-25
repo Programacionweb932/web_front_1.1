@@ -11,7 +11,7 @@ const AdminUpdateTicket = () => {
   // Obtener el ticket por ID
   const fetchTicket = async () => {
     try {
-      const result = await axios.get(`https://web-back-p.vercel.app/api/ticket/${ticketId}`);
+      const result = await axios.get(`https://web-back-1-1.onrender.com/api/ticket/${ticketId}`);
       setTicketData(result.data.ticket);
     } catch (error) {
       setMessage('Error: Ticket no encontrado.');
@@ -21,7 +21,7 @@ const AdminUpdateTicket = () => {
   // Actualizar el ticket
   const updateTicket = async () => {
     try {
-      await axios.put(`https://web-back-p.vercel.app/api/ticket/${ticketId}`, { status, response });
+      await axios.put(`https://web-back-1-1.onrender.com/api/ticket/${ticketId}`, { status, response });
       setMessage('Ticket actualizado exitosamente.');
       setTicketData(null); // Limpiar el estado del ticket
     } catch (error) {

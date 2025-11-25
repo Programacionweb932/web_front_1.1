@@ -10,7 +10,7 @@ function HistorialTicketAdmin() {
     const fetchTickets = async () => {
       setLoading(true);
       try {
-        const response = await fetch('https://web-back-p.vercel.app/api/tickets/all', {
+        const response = await fetch('https://web-back-1-1.onrender.com/api/tickets/all', {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${localStorage.getItem('authToken')}`,

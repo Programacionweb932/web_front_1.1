@@ -23,7 +23,7 @@ function HomeAdmin() {
   const fetchTickets = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://web-back-p.vercel.app/api/tickets/all', {
+      const response = await fetch('https://web-back-1-1.onrender.com/api/tickets/all', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ function HomeAdmin() {
   const fetchAppointments = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://web-back-p.vercel.app/api/historial-citas', {
+      const response = await fetch('https://web-back-1-1.onrender.com/api/historial-citas', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ function HomeAdmin() {
     setMessage('');
 
     try {
-      const response = await fetch('https://web-back-p.vercel.app/api/tickets/actualizar-estado', {
+      const response = await fetch('https://web-back-1-1.onrender.com/api/tickets/actualizar-estado', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

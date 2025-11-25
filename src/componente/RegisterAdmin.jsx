@@ -25,7 +25,7 @@ function RegisterAdmin() {
     }
 
     try {
-      const response = await fetch('https://web-back-p.vercel.app/api/Adminregister', {
+      const response = await fetch('https://web-back-1-1.onrender.com/api/Adminregister', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, email, password }),

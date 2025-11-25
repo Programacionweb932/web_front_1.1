@@ -24,7 +24,7 @@ const HistorialTicket = () => {
 
     setLoading(true);
     try {
-      const response = await fetch('https://web-back-p.vercel.app/api/tickets/history', {
+      const response = await fetch('https://web-back-1-1.onrender.com/api/tickets/history', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

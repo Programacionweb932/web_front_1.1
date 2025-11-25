@@ -21,7 +21,7 @@ import Nosotros from './componente/Nosotros';
 import LandinAdmin from './componente/LandinAdmin';
 import HistorialCitasAdmin from './componente/HistorialCitasAdmin';
 import HistorialCitasPorUsuario from './componente/HistorialCitasPorUsuario';
-import Contacto from './componente/contacto';
+import Contacto from './componente/Contacto';
 
 
 function App() {
